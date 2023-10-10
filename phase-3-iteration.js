@@ -21,3 +21,29 @@ Array.prototype.bubbleSort = function () {
 let arr1 = [3, 9, 1, 7, 5];
 
 console.log(arr1.bubbleSort());
+
+String.prototype.substrings = function () {
+
+    let string = [];
+    for(let i = 0; i <= this.length; i++) {
+        for(let j = i+1; j <= this.length; j++) {
+            string.push(this.slice(i,j));
+        }
+    }
+
+    return string;
+}
+
+console.log("abcde".substrings());
+
+
+range = function (start, end) {
+
+    if ( start === end ) {
+        return start;
+    }
+
+    return [start] + [range(start+1, end)];
+}
+
+console.log(range(0,3));
